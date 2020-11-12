@@ -7,7 +7,6 @@ public class NonRepeatingString {
         char charArray[] = str.toCharArray();  
           
         System.out.println("Given string: "+str);  
-        //Counts each character present in the string  
         for(int i = 0; i <str.length(); i++) {  
             unique = true;
             for(int j = i+1; j <str.length(); j++) {  
