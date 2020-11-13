@@ -5,12 +5,12 @@ import java.util.Set;
 public class DuplicateStrings {
      public static void main(String[] args) {
   	String str = "Java is Object Oriented";
-  	int count;  
-          
+
         //Converts given string into character array  
-        char charArray[] = str.toCharArray();  
+        char charArray[] = str.toCharArray();            
           
-        System.out.println("Duplicate characters in the given string: "+str);  
+        System.out.println("Given string: "+str);  
+
         //create a hashmap
 	Map<Character, Integer> charMap = new HashMap<Character, Integer>();
 	//loop each characters and put to hashmap with no:of times duplicate occurred
@@ -25,6 +25,7 @@ public class DuplicateStrings {
 	}        
 
 	//Print hashMap with duplicates
+	System.out.println("Duplicate characters are: ");
 	for(Map.Entry<Character,Integer> charEntry : charMap.entrySet()) {
 		if(charEntry.getValue()>1) {
 			System.out.println(charEntry.getKey()+" : "+charEntry.getValue());
