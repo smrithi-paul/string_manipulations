@@ -1,27 +1,36 @@
+import java.util.LinkedHashMap; 
+import java.util.Map; 
+import java.util.Set;
+
 public class NonRepeatingString {
      public static void main(String[] args) {
   	String str = "Java is Object Oriented";
-  	boolean unique;
-          
+
         //Converts given string into character array  
-        char charArray[] = str.toCharArray();  
+        char charArray[] = str.toCharArray();            
           
         System.out.println("Given string: "+str);  
-        for(int i = 0; i <str.length(); i++) {  
-            unique = true;
-            for(int j = i+1; j <str.length(); j++) {  
-		//comparing each character 
-                if(charArray[i] == charArray[j] && charArray[i] != ' ') {  
-                    unique = false;
-		    break;
-                }  
-            } 
-	//A character is considered as unique if it is true  
-            if(unique)  
-                System.out.println("First non repeating character in a string is "+charArray[i]);   
-        	break;
-	}  
+
+        //create a hashmap
+	Map<Character, Integer> charMap = new LinkedHashMap<Character, Integer>();
+	//loop each characters and put to hashmap with no:of times duplicate occurred
+	for(Character ch: charArray) {
+		if(charMap.containsKey(ch)) {
+			charMap.put(ch, charMap.get(ch)+1);
+		} else {
+			if(!(ch==' ')) { 
+				charMap.put(ch,1);
+			}
+		}
+	}        
+
+	//Print hashMap with duplicates
+	System.out.println("First non repeated character is: ");
+	for(Map.Entry<Character,Integer> charEntry : charMap.entrySet()) {
+		if(charEntry.getValue()==1) {
+			System.out.println(charEntry.getKey());
+			break;
+		}
+	} 
     }  
  }
-
-
