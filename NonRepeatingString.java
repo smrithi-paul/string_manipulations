@@ -24,7 +24,7 @@ public class NonRepeatingString {
 		}
 	}        
 
-	//Print hashMap with duplicates
+	//Print first non repeated char
 	System.out.println("First non repeated character is: ");
 	for(Map.Entry<Character,Integer> charEntry : charMap.entrySet()) {
 		if(charEntry.getValue()==1) {
