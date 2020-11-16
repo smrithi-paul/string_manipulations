@@ -13,7 +13,7 @@ private static void substringPalindrome(String str, int min, int max, Set<String
 	}
 }
 
-//to find longest substrings
+//to find all substrings
 private static void substringsOfPalindrome(String givenString) {
 	String str = givenString;
 	int strLength = str.length();
