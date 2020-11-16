@@ -13,3 +13,7 @@ working with string
 
 6. Check if substring - O(n)
 
+7. Longest Palindrom substring - O(n²)
+
+8. All substrings of palindrome - O(n²)
+
